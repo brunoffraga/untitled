@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${PGHOST_ONLY}:${PGPORT_ONLY}/${PGDATABASE_ONLY}
+    username: ${PGUSER_ONLY}
+    password: ${PGPASSWORD_ONLY}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true

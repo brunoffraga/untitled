@@ -1,0 +1,25 @@
+spring:
+  # Aqui começa a parte do datasource
+  datasource:
+    url: jdbc:h2:mem:sdw2023
+    username: sdw2023
+    password:
+
+  # Aqui começa a parte do JPA
+  jpa:
+    show-sql: true
+    open-in-view: false # Se você quiser manter esta linha
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate:
+          format_sql: true # Se você quiser manter esta linha
+
+  # AQUI ESTÁ O PONTO MAIS CRÍTICO: 'h2:' deve ter a mesma INDENTAÇÃO que 'datasource:' e 'jpa:'
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
